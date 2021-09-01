@@ -7,7 +7,9 @@ const searchFun = () => {
 
     // displayspinner 
     toggleSpinner('block');
-
+    document.getElementById('totalresult').style.display = 'none';
+    document.getElementById('nomatch').style.display = 'none';
+    
     const url = (`https://openlibrary.org/search.json?q=${searchText}`);
     fetch(url)
         .then(res => res.json())
@@ -27,8 +29,9 @@ const displaySearchBooks = books => {
     const showResults = document.getElementById('results');
     showResults.textContent = '';
 
+    document.getElementById('totalresult').style.display = 'block';
     //  result not found 
-    if (books.length == 0) {
+    if (books.length === 0) {
         document.getElementById('nomatch').style.display = 'block'
     }
 
