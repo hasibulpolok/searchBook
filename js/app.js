@@ -2,7 +2,7 @@
      const searchField = document.getElementById('searchfield');
      const searchText = searchField.value; 
      searchField.value = "";
-     const url=(`http://openlibrary.org/search.json?q=${searchText}`);
+     const url=(`https://openlibrary.org/search.json?q=${searchText}`);
      console.log(url);
      fetch(url)
      .then(res => res.json())
@@ -28,9 +28,8 @@
                             </h6>
                             <h6 class="card-title text-center">Language: ${book.language}
                             </h6>
-                            // <p class="card-text text-center">This is a wider card with supporting text below as a
-                            //     natural lead-in to
-                            //     additional content. This content is a little bit longer.</p>
+                            <h6 class="card-title text-center">Publisher: ${book.publisher}
+                            </h6>
                         </div>
                     </div>
                 </div>
